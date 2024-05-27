@@ -9,7 +9,7 @@ class _NavbarDesktop extends StatelessWidget {
 
     return Container(
       padding: Space.all(),
-      color: appProvider.isDark ? Colors.black : Colors.white,
+      color: Colors.black,
       child: Row(
         children: [
           const NavBarLogo(),
@@ -41,22 +41,11 @@ class _NavbarDesktop extends StatelessWidget {
               child: Padding(
                 padding: Space.all(1.25, 0.45),
                 child: Text(
-                  'RESUME',
+                  'CV',
                   style: AppText.l1b,
                 ),
               ),
             ),
-          ),
-          Space.x!,
-          Switch(
-            inactiveTrackColor: Colors.grey,
-            value: appProvider.isDark,
-            onChanged: (value) {
-              appProvider.setTheme(
-                !value ? ThemeMode.light : ThemeMode.dark,
-              );
-            },
-            activeColor: AppTheme.c!.primary!,
           ),
           Space.x!,
         ],
@@ -77,16 +66,6 @@ class _NavBarTablet extends StatelessWidget {
       child: Row(
         children: [
           Space.x1!,
-          IconButton(
-            highlightColor: Colors.white54,
-            splashRadius: AppDimensions.normalize(10),
-            onPressed: () {
-              drawerProvider.key.currentState!.openDrawer();
-            },
-            icon: const Icon(
-              Icons.menu,
-            ),
-          ),
           Space.xm!,
           const NavBarLogo(),
           Space.x1!,

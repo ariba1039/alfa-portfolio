@@ -23,7 +23,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
             text: '\nWhat I can do?',
           ),
           const CustomSectionSubHeading(
-            text: 'I may not be perfect but surely I\'m of some use :)\n\n',
+            text: 'I may not be perfect but surely I\'m of some use \n\n',
           ),
           Space.y!,
           Wrap(

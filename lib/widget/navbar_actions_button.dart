@@ -31,7 +31,7 @@ class NavBarActionButton extends StatelessWidget {
           highlightColor: Colors.white54,
           hoverColor: AppTheme.c!.primary,
           onPressed: () {
-            scrollProvider.scroll(index);
+            scrollProvider.scroll(index + 1);
           },
           child: Padding(
             padding: Space.all(0.5, 0.45),

@@ -62,8 +62,8 @@ class _MaterialChildState extends State<MaterialChild> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Alfawhocodes',
-      theme: theme.themeLight,
+      title: 'AlfaWhoCodes',
+      theme: theme.themeDark,
       darkTheme: theme.themeDark,
       themeMode: widget.provider.themeMode,
       initialRoute: "/",

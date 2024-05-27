@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final themeMap = {
   "dark": ThemeMode.dark,
-  "light": ThemeMode.light,
+  "light": ThemeMode.dark,
 };
 
 class AppProvider extends ChangeNotifier {

@@ -74,8 +74,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
               opacity: 0.9,
               child: EntranceFader(
                 offset: const Offset(0, 0),
-                delay: const Duration(seconds: 1),
-                duration: const Duration(milliseconds: 800),
+                delay: const Duration(seconds: 0),
+                duration: const Duration(milliseconds: 1000),
                 child: Image.asset(
                   StaticUtils.blackWhitePhoto,
                   height: size.width < 1200
@@ -90,7 +90,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
             margin: EdgeInsets.fromLTRB(
               AppDimensions.normalize(30),
               AppDimensions.normalize(80),
-              0,
+              AppDimensions.normalize(20),
               0,
             ),
             child: Column(
@@ -105,20 +105,20 @@ class _HomeDesktopState extends State<HomeDesktop> {
                         fontFamily: 'Montserrat',
                       ),
                     ),
-                    EntranceFader(
-                      offset: const Offset(0, 0),
-                      delay: const Duration(seconds: 2),
-                      duration: const Duration(milliseconds: 800),
-                      child: Image.asset(
-                        StaticUtils.hi,
-                        height: AppDimensions.normalize(12),
-                      ),
-                    ),
+                    // EntranceFader(
+                    //   offset: const Offset(0, 0),
+                    //   delay: const Duration(seconds: 2),
+                    //   duration: const Duration(milliseconds: 800),
+                    //   child: Image.asset(
+                    //     StaticUtils.hi,
+                    //     height: AppDimensions.normalize(12),
+                    //   ),
+                    // ),
                   ],
                 ),
                 Space.y1!,
                 Text(
-                  "Mohammed",
+                  "I\'m Sheik Mohammed",
                   style: AppText.h1!.copyWith(
                     fontFamily: 'Montserrat',
                     fontSize: AppDimensions.normalize(25),
@@ -128,7 +128,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 Text(
                   "Alfaz",
                   style: AppText.h1b!.copyWith(
-                    fontSize: AppDimensions.normalize(25),
+                    fontSize: AppDimensions.normalize(36),
                     height: 1,
                   ),
                 ),
@@ -157,7 +157,12 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                   textStyle: AppText.b1,
                                 ),
                                 TyperAnimatedText(
-                                  ' Photographer',
+                                  'a Photographer',
+                                  speed: const Duration(milliseconds: 50),
+                                  textStyle: AppText.b1,
+                                ),
+                                TyperAnimatedText(
+                                  'a Mentor',
                                   speed: const Duration(milliseconds: 50),
                                   textStyle: AppText.b1,
                                 ),

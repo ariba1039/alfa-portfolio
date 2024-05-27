@@ -46,10 +46,15 @@ class HomeMobile extends StatelessWidget {
                         fontFamily: 'Montserrat',
                       ),
                     ),
-                    Space.x!,
                     Image.asset(
                       StaticUtils.hi,
                       height: AppDimensions.normalize(10),
+                    ),
+                    Text(
+                      ' I\'m',
+                      style: AppText.b2!.copyWith(
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
                   ],
                 ),
@@ -82,12 +87,17 @@ class HomeMobile extends StatelessWidget {
                           textStyle: AppText.b1,
                         ),
                         TyperAnimatedText(
-                          ' UI/UX Enthusiast',
+                          ' Hodophile',
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,
                         ),
                         TyperAnimatedText(
-                          ' A friend :)',
+                          'A Photographer',
+                          speed: const Duration(milliseconds: 50),
+                          textStyle: AppText.b1,
+                        ),
+                        TyperAnimatedText(
+                          'A Mentor',
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,
                         ),

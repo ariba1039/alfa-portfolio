@@ -13,9 +13,14 @@ class ContactUtils {
     "Email",
   ];
 
+  static const List<String> links = [
+    "",
+    "tel:8618789709",
+    "mailto:alfawhocdes@gmail.com",
+  ];
   static const List<String> details = [
-    "Attock, Pakistan",
-    "(+92) 346 0159889",
-    "hamza.6.shakeel@gmail.com",
+    "Udupi, India",
+    "(+91) 861 8789 709",
+    "alfawhocdes@gmail.com",
   ];
 }

@@ -46,11 +46,12 @@ class _ServiceCardState extends State<_ServiceCard> {
         flipOnTouch: kIsWeb ? false : true,
         key: cardKey,
         back: Container(
+          alignment: Alignment.center,
           width: AppDimensions.normalize(100),
           height: AppDimensions.normalize(80),
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
           decoration: BoxDecoration(
-            color: appProvider.isDark ? Colors.grey[900] : Colors.white,
+            color: Colors.grey[900],
             borderRadius: BorderRadius.circular(15),
             boxShadow: isHover
                 ? [
@@ -78,7 +79,7 @@ class _ServiceCardState extends State<_ServiceCard> {
           height: AppDimensions.normalize(80),
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
           decoration: BoxDecoration(
-            color: appProvider.isDark ? Colors.grey[900] : Colors.white,
+            color: Color.fromARGB(255, 49, 49, 49),
             borderRadius: BorderRadius.circular(15),
             boxShadow: isHover
                 ? [
@@ -102,10 +103,7 @@ class _ServiceCardState extends State<_ServiceCard> {
               Image.asset(
                 widget.serviceIcon,
                 height: AppDimensions.normalize(30),
-                color: widget.serviceIcon.contains(StaticUtils.openSource) &&
-                        !appProvider.isDark
-                    ? Colors.black
-                    : null,
+                color: !appProvider.isDark ? Colors.white : null,
               ),
               Space.y1!,
               Text(

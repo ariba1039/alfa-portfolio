@@ -47,7 +47,7 @@ class ArrowOnTopState extends State<ArrowOnTop> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: appProvider.isDark ? Colors.white : Colors.black,
+                    color: appProvider.isDark ? Colors.white : Colors.white,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       bottomLeft: Radius.circular(8.0),

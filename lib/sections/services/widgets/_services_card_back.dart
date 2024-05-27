@@ -17,85 +17,78 @@ class _ServiceCardBackWidget extends StatelessWidget {
         Text(
           serviceDesc,
           style: AppText.l1,
+          textAlign: TextAlign.center,
         ),
-        Divider(
-          color: appProvider.isDark ? Colors.white : Colors.black38,
-        ),
-        SizedBox(
+        // Divider(
+        //   color: appProvider.isDark ? Colors.white : Colors.black38,
+        // ),
+        Container(
+          margin: EdgeInsets.only(right: 24, left: 24),
           height: AppDimensions.normalize(14),
-          width: AppDimensions.normalize(60),
+          width: AppDimensions.normalize(64),
           child: MaterialButton(
             color: AppTheme.c!.primary,
             onPressed: () => showDialog(
                 context: context,
                 builder: (contecxt) => AlertDialog(
                       title: Text(
-                        "Hire Me!",
+                        "Contact Me!",
                         style: AppText.b2b,
+                        textAlign: TextAlign.center,
                       ),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
-                          child: const Text("Back"),
+                          child: const Text("Close"),
                         )
                       ],
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
+                      content: Row(
+                        mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          MaterialButton(
-                            height: 40.0,
-                            onPressed: () => openURL(
-                              'https://api.whatsapp.com/send?phone=923460159889',
-                            ),
-                            color: const Color(0xff34CB62),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  FontAwesomeIcons.whatsapp,
-                                  color: Colors.white,
-                                ),
-                                Space.x!,
-                                Text(
-                                  'WhatsApp',
-                                  style: AppText.l1!.copyWith(
+                          Expanded(
+                            child: IconButton(
+                              onPressed: () => openURL(
+                                'https://api.whatsapp.com/send?phone=918618789709',
+                              ),
+                              color: const Color(0xff34CB62),
+                              icon: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Space.x!,
+                                  const Icon(
+                                    FontAwesomeIcons.whatsapp,
                                     color: Colors.white,
                                   ),
-                                ),
-                              ],
+                                  Space.x!,
+                                ],
+                              ),
                             ),
                           ),
-                          Space.y1!,
-                          MaterialButton(
-                            height: 40.0,
-                            onPressed: () => openURL(
-                              'https://www.upwork.com/freelancers/~0197b0f6aaeba9675f',
-                            ),
-                            color: const Color(0xff13A800),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.network(
-                                  'https://img.icons8.com/ios-filled/50/000000/upwork.png',
-                                  height: 35.0,
-                                  color: Colors.white,
-                                ),
-                                Space.x!,
-                                Text(
-                                  'Upwork',
-                                  style: AppText.l1!.copyWith(
+                          Expanded(
+                            child: IconButton(
+                              onPressed: () => openURL(
+                                'https://www.instagram.com/alfawhocodes',
+                              ),
+                              color: const Color(0xff34CB62),
+                              icon: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Space.x!,
+                                  const Icon(
+                                    FontAwesomeIcons.instagram,
                                     color: Colors.white,
                                   ),
-                                ),
-                              ],
+                                  Space.x!,
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     )),
             child: Text(
-              'HIRE ME!',
+              'CONTACT ME!',
               style: AppText.b2!.copyWith(
                 color: Colors.white,
               ),

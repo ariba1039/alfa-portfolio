@@ -56,11 +56,17 @@ class HomeTab extends StatelessWidget {
                     ),
                     EntranceFader(
                       offset: const Offset(0, 0),
-                      delay: const Duration(seconds: 2),
+                      delay: const Duration(seconds: 1),
                       duration: const Duration(milliseconds: 800),
                       child: Image.asset(
                         StaticUtils.hi,
                         height: AppDimensions.normalize(12),
+                      ),
+                    ),
+                    Text(
+                      ' I\'m',
+                      style: AppText.b2!.copyWith(
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ],
@@ -97,12 +103,17 @@ class HomeTab extends StatelessWidget {
                             textStyle: AppText.b1,
                           ),
                           TyperAnimatedText(
-                            ' UI/UX Enthusiast',
+                            ' Hodophile',
                             speed: const Duration(milliseconds: 50),
                             textStyle: AppText.b1,
                           ),
                           TyperAnimatedText(
-                            ' A friend :)',
+                            'A Photographer',
+                            speed: const Duration(milliseconds: 50),
+                            textStyle: AppText.b1,
+                          ),
+                          TyperAnimatedText(
+                            'A Mentor',
                             speed: const Duration(milliseconds: 50),
                             textStyle: AppText.b1,
                           ),

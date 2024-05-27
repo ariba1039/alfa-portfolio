@@ -35,35 +35,59 @@ class AboutTab extends StatelessWidget {
             ),
           ),
           Space.y1!,
-          Image.asset(
-            StaticUtils.mobilePhoto,
-            height: height * 0.27,
+          Column(
+            children: [
+              Container(
+                width: height * 0.27,
+                height: height * 0.27,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2.0, // Adjust the width as needed
+                  ),
+                ),
+                child: ClipOval(
+                  child: Image.asset(
+                    StaticUtils.mobilePhotoBw,
+                    height: height * 0.27,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: height * 0.03,
-          ),
-          Text(
-            "Who am I?",
-            style: AppText.b2!.copyWith(
-              color: AppTheme.c!.primary,
+          Container(
+            padding: Space.h2,
+            child: Text(
+              "Who am I?",
+              style: AppText.b2!.copyWith(
+                color: AppTheme.c!.primary,
+              ),
             ),
           ),
           Space.y1!,
-          Text(
-            AboutUtils.aboutMeHeadline,
-            style: AppText.b2b!.copyWith(
-              fontFamily: 'Montserrat',
+          Container(
+            padding: Space.h2,
+            child: Text(
+              AboutUtils.aboutMeHeadline,
+              style: AppText.b2b!.copyWith(
+                fontFamily: 'Montserrat',
+              ),
             ),
           ),
           SizedBox(
             height: height * 0.02,
           ),
-          Text(
-            AboutUtils.aboutMeDetail,
-            style: AppText.l1!.copyWith(
-              height: 2,
-              letterSpacing: 1.1,
-              fontFamily: 'Montserrat',
+          Container(
+            padding: Space.h2,
+            child: Text(
+              AboutUtils.aboutMeDetail,
+              style: AppText.l1!.copyWith(
+                height: 2,
+                letterSpacing: 1.1,
+                fontFamily: 'Montserrat',
+              ),
             ),
           ),
           Space.y!,
@@ -72,18 +96,24 @@ class AboutTab extends StatelessWidget {
             thickness: AppDimensions.normalize(0.5),
           ),
           Space.y!,
-          Text(
-            'Technologies I have worked with:',
-            style: AppText.l1!.copyWith(
-              color: AppTheme.c!.primary,
+          Container(
+            padding: Space.h2,
+            child: Text(
+              'Languages I have worked with:',
+              style: AppText.l1!.copyWith(
+                color: AppTheme.c!.primary,
+              ),
             ),
           ),
-          Row(
-            children: kTools
-                .map(
-                  (e) => ToolTechWidget(techName: e),
-                )
-                .toList(),
+          Container(
+            padding: Space.h2,
+            child: Row(
+              children: kTools
+                  .map(
+                    (e) => ToolTechWidget(techName: e),
+                  )
+                  .toList(),
+            ),
           ),
           Space.y!,
           Divider(
@@ -91,81 +121,74 @@ class AboutTab extends StatelessWidget {
             thickness: AppDimensions.normalize(0.5),
           ),
           Space.y!,
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  AboutMeData(
-                    data: "Name",
-                    information: "Muhammad Hamza",
-                  ),
-                  AboutMeData(
-                    data: "Age",
-                    information: "24",
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: width > 710 ? width * 0.2 : width * 0.05,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  AboutMeData(
-                    data: "Email",
-                    information: "hamza.6.shakeel@gmail.com",
-                  ),
-                  AboutMeData(
-                    data: "From",
-                    information: "Attock, PK",
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Space.y1!,
-          Row(
-            children: [
-              SizedBox(
-                height: AppDimensions.normalize(13),
-                width: AppDimensions.normalize(40),
-                child: OutlinedButton(
-                  onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
-                  child: const Text(
-                    "Resume",
-                  ),
-                ),
-              ),
-              Space.x!,
-              Container(
-                width: width * 0.05,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Colors.grey[900]!,
-                      width: 2.0,
+          Container(
+            padding: Space.h2,
+            child: Row(
+              children: [
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AboutMeData(
+                      data: "Name",
+                      information: "Mohammed Alfaz",
                     ),
-                  ),
+                    AboutMeData(
+                      data: "Age",
+                      information: "26",
+                    ),
+                  ],
                 ),
+                SizedBox(
+                  width: width > 710 ? width * 0.2 : width * 0.05,
+                ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AboutMeData(
+                      data: "Email",
+                      information: "alfawhocodes@gmail.com",
+                    ),
+                    AboutMeData(
+                      data: "From",
+                      information: "Udupi, IN",
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomSectionHeading(
+                text: '\nTech Stack ',
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                    children: WorkUtils.logos
-                        .asMap()
-                        .entries
-                        .map(
-                          (e) => CommunityIconBtn(
-                            icon: e.value,
-                            link: WorkUtils.communityLinks[e.key],
-                            height: WorkUtils.communityLogoHeight[e.key],
-                          ),
-                        )
-                        .toList()),
+              const CustomSectionSubHeading(
+                text: "Technology stack i work upon\n\n",
               ),
             ],
-          )
+          ),
+          Container(
+            padding: Space.h2,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 12,
+              runSpacing: 24,
+              runAlignment: WrapAlignment.center,
+              children: [
+                ...WorkUtils.logos.asMap().entries.map(
+                      (e) => Expanded(
+                        child: CommunityIconBtn(
+                          icon: e.value,
+                          link: WorkUtils.communityLinks[e.key],
+                          height: WorkUtils.communityLogoHeight[e.key],
+                        ),
+                      ),
+                    )
+              ],
+            ),
+          ),
         ],
       ),
     );

@@ -10,24 +10,35 @@ class StaticUtils {
   static const String hi = 'assets/hi.gif';
 
   // photos
-  static const String mobilePhoto = 'assets/photos/mobile.png';
+  static const String mobilePhoto = 'assets/photos/awc-circle.png';
+  static const String mobilePhotoBw = 'assets/photos/alfawhocodes_bw.jpg';
   static const String coloredPhoto = 'assets/photos/colored.jpg';
   static const String blackWhitePhoto = 'assets/photos/black-white.png';
   static const String logoWhite = 'assets/photos/AWC.png';
 
   // workw
-  static const String dsc = 'assets/work/dsc.png';
-  static const String sastaticket = 'assets/work/st.png';
-  static const String university = 'assets/work/cui.png';
-  static const String fullterIsb = 'assets/work/flutterIsl.png';
+  static const String flutter = 'assets/work/flutter.png';
+  static const String as = 'assets/work/as.png';
+  static const String net = 'assets/work/net.png';
+  static const String nodejs = 'assets/work/nodejs.png';
+  static const String prpro = 'assets/work/prpro.png';
+  static const String xcode = 'assets/work/xcode.png';
+  static const String react = 'assets/work/react.webp';
 
   // services
-  static const String uiux = 'assets/services/ui.png';
-  static const String blog = 'assets/services/blog.png';
-  static const String appDev = 'assets/services/app.png';
-  static const String rapid = 'assets/services/rapid.png';
-  static const String openSource = 'assets/services/open.png';
-  static const String openSourceBlack = 'assets/services/open_b.png';
+  static const String service1 = 'assets/services/mobileapp.png';
+  static const String service2 = 'assets/services/photography.png';
+  static const String service3 = 'assets/services/videography.png';
+  static const String service4 = 'assets/services/mentor.png';
+  static const String service5 = 'assets/services/service5.png';
+  static const String service6 = 'assets/services/programming.png';
+
+  // services
+  static const String anim1 = 'assets/services/anim1.json';
+  static const String anim2 = 'assets/services/anim2.json';
+  static const String anim3 = 'assets/services/anim3.json';
+  static const String anim4 = 'assets/services/anim4.json';
+  static const String anim5 = 'assets/services/anim5.json';
 
   static const List<String> socialIconURL = [
     "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png",
@@ -35,7 +46,9 @@ class StaticUtils {
     "https://img.icons8.com/android/480/ffffff/twitter.png",
     "https://img.icons8.com/metro/208/ffffff/facebook-new--v2.png",
     "https://img.icons8.com/metro/308/ffffff/linkedin.png",
+    "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png",
     "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
+        "https://img.icons8.com/metro/208/ffffff/snapchat.png"
   ];
 
   static const List<String> socialLinks = [
@@ -44,13 +57,14 @@ class StaticUtils {
     "https://twitter.com/creative_alf",
     "https://facebook.com/sheikmohammedalfaz",
     "https://linkedin.com/in/mohammed-alfaz",
-    "https://alfawhocodes.medium.com"
+    "https://alfawhocodes.medium.com",
+    "https://snapchat.com/t/Au5yaxn1"
   ];
 
   static const String resume =
-      'https://drive.google.com/file/d/1bDNNrkQtNVJbXcdwMSx0crQQvAF_nMwV/view?usp=sharing';
+      'https://drive.google.com/file/d/13e5Mi5m6T-flvqC1QwIyfuOXq8GDkDst/view?usp=drivesdk';
 
-  static const String gitHub = 'https://github.com/mhmzdev';
+  static const String gitHub = 'https://github.com/alfawhocodes';
 }
 
 String getGreeting() {

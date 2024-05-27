@@ -34,9 +34,9 @@ class _MainPageState extends State<MainPage> {
     final drawerProvider = Provider.of<DrawerProvider>(context);
 
     return Scaffold(
-      key: drawerProvider.key,
+      //    key: drawerProvider.key,
       extendBodyBehindAppBar: true,
-      drawer: !Responsive.isDesktop(context) ? const _MobileDrawer() : null,
+      //   drawer: !Responsive.isDesktop(context) ? const _MobileDrawer() : null,
       body: SafeArea(
         child: Stack(
           children: [

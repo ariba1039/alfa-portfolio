@@ -34,13 +34,23 @@ class AboutDesktop extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: Image.asset(
-                  StaticUtils.coloredPhoto,
-                  height: height * 0.7,
+                flex: 2,
+                child: Container(
+                  margin: EdgeInsets.only(left: 60, right: 60),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                        10.0), // Adjust the radius as needed
+                    image: DecorationImage(
+                      image: AssetImage(StaticUtils.coloredPhoto),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  height: height * 0.6,
+                  width: height * 0.1,
                 ),
               ),
               Expanded(
-                flex: width < 1230 ? 2 : 1,
+                flex: width < 1230 ? 4 : 3,
                 child: Container(
                   padding: EdgeInsets.only(left: width < 1230 ? 25.0 : 0),
                   child: Column(
@@ -77,7 +87,7 @@ class AboutDesktop extends StatelessWidget {
                       ),
                       Space.y!,
                       Text(
-                        'Technologies I have worked with:',
+                        'Languages I have worked with:',
                         style: AppText.l1!.copyWith(
                           color: AppTheme.c!.primary,
                         ),
@@ -127,37 +137,6 @@ class AboutDesktop extends StatelessWidget {
                         ],
                       ),
                       Space.y1!,
-                      Row(
-                        children: [
-                          SizedBox(
-                            height: AppDimensions.normalize(13),
-                            width: AppDimensions.normalize(40),
-                            child: OutlinedButton(
-                              onPressed: () =>
-                                  html.window.open(StaticUtils.resume, 'pdf'),
-                              child: const Text(
-                                "Resume",
-                              ),
-                            ),
-                          ),
-                          Space.x1!,
-                          Container(
-                            color: Colors.grey[900]!,
-                            width: AppDimensions.normalize(30),
-                            height: AppDimensions.normalize(0.5),
-                          ),
-                          ...WorkUtils.logos.asMap().entries.map(
-                                (e) => Expanded(
-                                  child: CommunityIconBtn(
-                                    icon: e.value,
-                                    link: WorkUtils.communityLinks[e.key],
-                                    height:
-                                        WorkUtils.communityLogoHeight[e.key],
-                                  ),
-                                ),
-                              )
-                        ],
-                      ),
                     ],
                   ),
                 ),
@@ -166,7 +145,33 @@ class AboutDesktop extends StatelessWidget {
                 width: width < 1230 ? width * 0.05 : width * 0.1,
               ),
             ],
-          )
+          ),
+          const CustomSectionHeading(
+            text: '\nTech Stack ',
+          ),
+          const CustomSectionSubHeading(
+            text: "Key Technologies I Utilize\n\n",
+          ),
+          SizedBox(
+            height: 24,
+          ),
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 12,
+            runSpacing: 12,
+            runAlignment: WrapAlignment.center,
+            children: [
+              ...WorkUtils.logos.asMap().entries.map(
+                    (e) => Expanded(
+                      child: CommunityIconBtn(
+                        icon: e.value,
+                        link: WorkUtils.communityLinks[e.key],
+                        height: WorkUtils.communityLogoHeight[e.key],
+                      ),
+                    ),
+                  )
+            ],
+          ),
         ],
       ),
     );

@@ -26,13 +26,13 @@ class AboutMeData extends StatelessWidget {
             TextSpan(
               text: "$data: ",
               style: AppText.l1b!.copyWith(
-                color: appProvider.isDark ? Colors.white : Colors.black,
+                color: Colors.white,
               ),
             ),
             TextSpan(
               text: " $information\n",
               style: AppText.l1!.copyWith(
-                color: appProvider.isDark ? Colors.white : Colors.black,
+                color: Colors.white,
               ),
             ),
           ],

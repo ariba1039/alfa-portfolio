@@ -21,7 +21,7 @@ class AboutMobile extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     return Container(
-      padding: Space.h,
+      padding: Space.h2,
       child: Column(
         children: [
           const CustomSectionHeading(
@@ -31,9 +31,30 @@ class AboutMobile extends StatelessWidget {
             text: 'Get to know me :)',
           ),
           Space.y1!,
-          Image.asset(
-            StaticUtils.mobilePhoto,
+          // Container(
+
+          //   child: Image.asset(
+          //     StaticUtils.mobilePhotoBw,
+          //     height: height * 0.27,
+          //   ),
+          // ),
+          Container(
+            width: height * 0.27,
             height: height * 0.27,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.white,
+                width: 2.0, // Adjust the width as needed
+              ),
+            ),
+            child: ClipOval(
+              child: Image.asset(
+                StaticUtils.mobilePhotoBw,
+                height: height * 0.27,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           SizedBox(
             height: height * 0.03,
@@ -72,7 +93,7 @@ class AboutMobile extends StatelessWidget {
           ),
           Space.y!,
           Text(
-            'Technologies I have worked with:',
+            'Languages I have worked with:',
             style: AppText.l1!.copyWith(
               color: AppTheme.c!.primary,
             ),
@@ -96,35 +117,52 @@ class AboutMobile extends StatelessWidget {
           ),
           const AboutMeData(
             data: "Name",
-            information: "Muhammad Hamza",
+            information: "Mohammed Alfaz",
           ),
+
           const AboutMeData(
             data: "Email",
-            information: "hamza.6.shakeel@gmail.com",
+            information: "alfawhocodes@gmail.com",
           ),
+
           Space.y!,
-          OutlinedButton(
-              child: const Text("Resume"),
+          ElevatedButton(
+              child: const Text("DOWNLOAD CV"),
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(AppTheme.c!.primary!),
+              ),
               onPressed: () {
                 kIsWeb
                     ? html.window.open(StaticUtils.resume, "pdf")
                     : openURL(StaticUtils.resume);
               }),
-          Space.y!,
+          const CustomSectionHeading(
+            text: '\nTech Stack ',
+          ),
+          const CustomSectionSubHeading(
+            text: "Technology stack i work upon\n\n",
+          ),
+          SizedBox(
+            height: 24,
+          ),
           Wrap(
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: WorkUtils.logos
-                  .asMap()
-                  .entries
-                  .map(
-                    (e) => CommunityIconBtn(
-                      icon: e.value,
-                      link: WorkUtils.communityLinks[e.key],
-                      height: WorkUtils.communityLogoHeight[e.key],
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 12,
+            runSpacing: 24,
+            runAlignment: WrapAlignment.center,
+            children: [
+              ...WorkUtils.logos.asMap().entries.map(
+                    (e) => Expanded(
+                      child: CommunityIconBtn(
+                        icon: e.value,
+                        link: WorkUtils.communityLinks[e.key],
+                        height: WorkUtils.communityLogoHeight[e.key],
+                      ),
                     ),
                   )
-                  .toList()),
+            ],
+          ),
         ],
       ),
     );

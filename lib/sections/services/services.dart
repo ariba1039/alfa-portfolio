@@ -10,6 +10,7 @@ import 'package:folio/utils/services_utils.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/custom_text_heading.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 part 'services_desktop.dart';

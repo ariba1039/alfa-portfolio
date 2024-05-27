@@ -20,9 +20,17 @@ class CommunityIconBtn extends StatelessWidget {
       child: InkWell(
         hoverColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        child: Image.asset(
-          icon,
-          height: height,
+        child: Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+                10), // Adjust the radius as per your design
+            color: Color.fromARGB(255, 255, 255, 255), // Background color
+          ),
+          child: Image.asset(
+            icon,
+            height: height,
+          ),
         ),
         onTap: () => openURL(link),
       ),

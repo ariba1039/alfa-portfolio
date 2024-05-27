@@ -2,26 +2,26 @@ import 'package:folio/utils/utils.dart';
 
 class ServicesUtils {
   static const List<String> servicesIcons = [
-    StaticUtils.appDev,
-    StaticUtils.uiux,
-    StaticUtils.rapid,
-    StaticUtils.blog,
-    StaticUtils.openSource,
+    StaticUtils.service1,
+    StaticUtils.service6,
+    StaticUtils.service2,
+    StaticUtils.service3,
+    StaticUtils.service4,
   ];
 
   static const List<String> servicesTitles = [
     "Mobile App Development",
-    "UI/UX Designing",
-    "Rapid Prototyping",
-    "Technical Blog Writing",
-    "Open Source - GitHub",
+    "Web Development",
+    "Photography",
+    "Cinematography",
+    "Mentoring",
   ];
 
   static const List<String> servicesDescription = [
-    "Android app development via Flutter\n- Splash Screen\n- Firebase Auth/Cloud\n- REST APIs\n- Maps integration and more...!",
-    "Modern UI/UX Designing\n- Adobe XD\n- Mobile & Web designs\n- Interactive UI designs\n- Responsiveness\n- Promo Videos and more..!",
-    "Rapid Prototype via Flutter\n- Working MVP\n- Quick & Working prototype",
-    "Technical Blog writing\n- Medium blogs\n- Soothing header images\n- SEO friendly\n- Researched topics and more..!",
-    "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
+    "I specialize in creating high-quality mobile applications tailored to your needs.\n",
+    "From simple websites to complex web applications, I have the expertise to bring your ideas to life on the web.\n",
+    "Capture moments that last a lifetime with my professional photography services.\n",
+    "Turn your vision into cinematic reality with my expert cinematography services.\n",
+    "Get personalized guidance and support from me, an experienced mentor, to help you reach your goals.\n",
   ];
 }

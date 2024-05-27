@@ -62,8 +62,8 @@ class ProjectCardState extends State<ProjectCard> {
         width: AppDimensions.normalize(150),
         height: AppDimensions.normalize(90),
         decoration: BoxDecoration(
-          color: appProvider.isDark ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey[900],
+          borderRadius: BorderRadius.circular(12),
           boxShadow: isHover
               ? [
                   BoxShadow(
@@ -87,28 +87,10 @@ class ProjectCardState extends State<ProjectCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 widget.projectIcon != null
-                    ? (width > 1135 || width < 950)
-                        ? Image.asset(
-                            widget.projectIcon!,
-                            height: height * 0.05,
-                          )
-                        : Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                widget.projectIcon!,
-                                height: height * 0.03,
-                              ),
-                              SizedBox(
-                                width: width * 0.01,
-                              ),
-                              Text(
-                                widget.projectTitle,
-                                style: AppText.b2b,
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          )
+                    ? Image.asset(
+                        widget.projectIcon!,
+                        height: height * 0.05,
+                      )
                     : Container(),
                 widget.projectIconData != null
                     ? Icon(
@@ -117,20 +99,10 @@ class ProjectCardState extends State<ProjectCard> {
                         size: height * 0.1,
                       )
                     : Container(),
-                (width > 1135 || width < 950)
-                    ? SizedBox(
-                        height: height * 0.02,
-                      )
-                    : const SizedBox(),
-                (width > 1135 || width < 950)
-                    ? Text(
-                        widget.projectTitle,
-                        style: AppText.b2b,
-                        textAlign: TextAlign.center,
-                      )
-                    : Container(),
-                SizedBox(
-                  height: height * 0.01,
+                Text(
+                  widget.projectTitle,
+                  style: AppText.b2b,
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   widget.projectDescription,
@@ -144,13 +116,18 @@ class ProjectCardState extends State<ProjectCard> {
             AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
-              child: FittedBox(
-                fit: BoxFit.fill,
-                child: widget.banner != null
-                    ? Image.asset(
-                        widget.banner!,
-                      )
-                    : Container(),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(
+                    12), // Adjust the radius as per your design
+                child: FittedBox(
+                  fit: BoxFit.fill,
+                  child: widget.banner != null
+                      ? Image.asset(
+                          widget.banner!,
+                          fit: BoxFit.fill,
+                        )
+                      : Container(),
+                ),
               ),
             ),
           ],

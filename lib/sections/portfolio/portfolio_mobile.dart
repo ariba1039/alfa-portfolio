@@ -21,26 +21,34 @@ class PortfolioMobileTab extends StatelessWidget {
         const CustomSectionSubHeading(
           text: "Here are few samples of my previous work :)\n\n",
         ),
-        CarouselSlider.builder(
-          itemCount: ProjectUtils.titles.length,
-          itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15.0),
-            child: ProjectCard(
-              projectIcon: ProjectUtils.icons[i],
-              projectLink: ProjectUtils.links[i],
-              projectTitle: ProjectUtils.titles[i],
-              projectDescription: ProjectUtils.description[i],
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          runSpacing: AppDimensions.normalize(10),
+          children: [
+            CarouselSlider.builder(
+              itemCount: ProjectUtils.banners.length,
+              itemBuilder: (BuildContext context, int index, int i) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: ProjectCard(
+                  banner: ProjectUtils.banners[index],
+                  projectIcon: ProjectUtils.icons[index],
+                  projectLink: ProjectUtils.links[index],
+                  projectTitle: ProjectUtils.titles[index],
+                  projectDescription: ProjectUtils.description[index],
+                ),
+              ),
+              options: CarouselOptions(
+                height: height * 0.35,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 5),
+                enlargeCenterPage: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                enableInfiniteScroll: false,
+              ),
             ),
-          ),
-          options: CarouselOptions(
-            height: height * 0.4,
-            autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 5),
-            enlargeCenterPage: true,
-            autoPlayCurve: Curves.fastOutSlowIn,
-            autoPlayAnimationDuration: const Duration(milliseconds: 800),
-            enableInfiniteScroll: false,
-          ),
+          ],
         ),
         Space.y!,
         SizedBox(
