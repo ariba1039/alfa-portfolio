@@ -67,11 +67,41 @@ class _HomeDesktopState extends State<HomeDesktop> {
       padding: Space.h,
       child: Stack(
         children: [
+          // Positioned(
+          //   bottom: 0,
+          //   left: 0,
+          //   child: Opacity(
+          //     opacity: 0.9,
+          //     child: EntranceFader(
+          //       offset: const Offset(0, 0),
+          //       delay: const Duration(seconds: 0),
+          //       duration: const Duration(milliseconds: 1000),
+          //       child: Image.asset(
+          //         StaticUtils.blackWhitePhoto,
+          //         height: size.width < 1200
+          //             ? size.height * 0.8
+          //             : size.height * 1.05,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Positioned(
             bottom: 0,
             left: 0,
-            child: Opacity(
-              opacity: 0.9,
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                return const LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.transparent, Colors.black, Colors.black],
+                  stops: [
+                    0.0,
+                    0.6,
+                    0.9,
+                  ], // Adjust the stop values to control the fade
+                ).createShader(bounds);
+              },
+              blendMode: BlendMode.dstIn,
               child: EntranceFader(
                 offset: const Offset(0, 0),
                 delay: const Duration(seconds: 0),
@@ -85,6 +115,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
               ),
             ),
           ),
+
           Container(
             alignment: Alignment.centerRight,
             margin: EdgeInsets.fromLTRB(

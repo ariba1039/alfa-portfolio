@@ -15,7 +15,7 @@ class SocialLinks extends StatelessWidget {
     final appProvider = Provider.of<AppProvider>(context);
     return Wrap(
       runSpacing: AppDimensions.normalize(10),
-      alignment: WrapAlignment.center,
+      alignment: WrapAlignment.end,
       children: StaticUtils.socialIconURL
           .asMap()
           .entries

@@ -18,19 +18,40 @@ class HomeTab extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: -110,
+            bottom: -100,
             left: 0,
             child: Opacity(
-              opacity: 0.9,
-              child: EntranceFader(
-                offset: const Offset(0, 0),
-                delay: const Duration(seconds: 1),
-                duration: const Duration(milliseconds: 800),
-                child: Image.asset(
-                  StaticUtils.blackWhitePhoto,
-                  height: size.width < 1200
-                      ? size.height * 0.75
-                      : size.height * 0.85,
+              opacity: 0.8,
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                      Colors.black,
+                      Colors.black
+                    ],
+                    stops: [
+                      0.0,
+                      0.8,
+                      0.9,
+                      0.9,
+                    ], // Adjust the stop values to control the fade
+                  ).createShader(bounds);
+                },
+                blendMode: BlendMode.dstIn,
+                child: EntranceFader(
+                  offset: const Offset(0, 0),
+                  delay: const Duration(seconds: 0),
+                  duration: const Duration(milliseconds: 1000),
+                  child: Image.asset(
+                    StaticUtils.blackWhitePhoto,
+                    height: size.width < 1200
+                        ? size.height * 0.8
+                        : size.height * 1.05,
+                  ),
                 ),
               ),
             ),

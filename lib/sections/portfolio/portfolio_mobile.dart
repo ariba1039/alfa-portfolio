@@ -19,7 +19,7 @@ class PortfolioMobileTab extends StatelessWidget {
           text: "\nPortfolio",
         ),
         const CustomSectionSubHeading(
-          text: "Here are few samples of my previous work :)\n\n",
+          text: "Here are few samples of my previous work \n\n",
         ),
         Wrap(
           alignment: WrapAlignment.center,

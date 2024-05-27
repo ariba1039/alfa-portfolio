@@ -153,12 +153,10 @@ class AboutMobile extends StatelessWidget {
             runAlignment: WrapAlignment.center,
             children: [
               ...WorkUtils.logos.asMap().entries.map(
-                    (e) => Expanded(
-                      child: CommunityIconBtn(
-                        icon: e.value,
-                        link: WorkUtils.communityLinks[e.key],
-                        height: WorkUtils.communityLogoHeight[e.key],
-                      ),
+                    (e) => CommunityIconBtn(
+                      icon: e.value,
+                      link: WorkUtils.communityLinks[e.key],
+                      height: WorkUtils.communityLogoHeight[e.key],
                     ),
                   )
             ],

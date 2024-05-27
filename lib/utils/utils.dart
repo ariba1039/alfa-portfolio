@@ -43,12 +43,13 @@ class StaticUtils {
   static const List<String> socialIconURL = [
     "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png",
     "https://img.icons8.com/material-rounded/384/ffffff/github.png",
-    "https://img.icons8.com/android/480/ffffff/twitter.png",
+    "https://img.icons8.com/ios-filled/150/twitterx--v1.png",
     "https://img.icons8.com/metro/208/ffffff/facebook-new--v2.png",
     "https://img.icons8.com/metro/308/ffffff/linkedin.png",
     "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png",
     "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
-        "https://img.icons8.com/metro/208/ffffff/snapchat.png"
+        "https://img.icons8.com/metro/208/ffffff/snapchat.png",
+    "https://img.icons8.com/ios-filled/150/telegram.png"
   ];
 
   static const List<String> socialLinks = [
@@ -58,7 +59,8 @@ class StaticUtils {
     "https://facebook.com/sheikmohammedalfaz",
     "https://linkedin.com/in/mohammed-alfaz",
     "https://alfawhocodes.medium.com",
-    "https://snapchat.com/t/Au5yaxn1"
+    "https://snapchat.com/t/Au5yaxn1",
+    "https://t.me/creative_alf"
   ];
 
   static const String resume =
@@ -77,8 +79,10 @@ String getGreeting() {
     return 'Hi, Good Afternoon ';
   } else if (hour < 21) {
     return 'Hi, Good Evening ';
+  } else if (hour > 21) {
+    return 'Hi, Night owl🦉';
   } else {
-    return 'Hi';
+    return 'Hello,';
   }
 }
 

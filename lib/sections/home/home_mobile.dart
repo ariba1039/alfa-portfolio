@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:folio/animations/entrance_fader.dart';
 import 'package:folio/configs/configs.dart';
 
 import 'package:folio/utils/utils.dart';
@@ -16,17 +17,57 @@ class HomeMobile extends StatelessWidget {
       height: size.height * 1.02,
       child: Stack(
         children: [
+          // Positioned(
+          //   bottom: 0.0,
+          //   left: -AppDimensions.normalize(2),
+          //   child: Opacity(
+          //     opacity: 0.9,
+          //     child: Image.asset(
+          //       StaticUtils.blackWhitePhoto,
+          //       height: AppDimensions.normalize(150),
+          //     ),
+          //   ),
+          // ),
           Positioned(
-            bottom: 0.0,
+            bottom: 0,
             left: -AppDimensions.normalize(2),
             child: Opacity(
-              opacity: 0.9,
-              child: Image.asset(
-                StaticUtils.blackWhitePhoto,
-                height: AppDimensions.normalize(150),
+              opacity: 0.8,
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                      Colors.black,
+                      Colors.black
+                    ],
+                    stops: [
+                      0.0,
+                      0.1,
+                      0.3,
+                      0.9,
+                    ], // Adjust the stop values to control the fade
+                  ).createShader(bounds);
+                },
+                blendMode: BlendMode.dstIn,
+                child: EntranceFader(
+                  offset: const Offset(0, 0),
+                  delay: const Duration(seconds: 0),
+                  duration: const Duration(milliseconds: 1000),
+                  child: Image.asset(
+                    StaticUtils.blackWhitePhoto,
+                    height: size.width < 1200
+                        ? size.height * 0.8
+                        : size.height * 1.05,
+                  ),
+                ),
               ),
             ),
           ),
+
           Container(
             margin: EdgeInsets.fromLTRB(
               AppDimensions.normalize(10),
