@@ -145,7 +145,7 @@ class AboutDesktop extends StatelessWidget {
           ],
         ),
         const CustomSectionHeading(
-          text: '\nTech Stackk ',
+          text: '\nTech Stack',
         ),
         const CustomSectionSubHeading(
           text: "Key Technologies I Utilize\n\n",

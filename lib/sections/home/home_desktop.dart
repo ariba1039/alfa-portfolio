@@ -63,7 +63,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 1.025,
+      height: size.height * 1.1,
       padding: Space.h,
       child: Stack(
         children: [

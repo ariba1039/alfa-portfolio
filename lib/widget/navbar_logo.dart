@@ -18,20 +18,6 @@ class NavBarLogo extends StatelessWidget {
             height: size.width < 1200 ? size.height * 0.09 : size.height * 0.1,
           ),
         ),
-        // Text(
-        //   "< ",
-        //   style: AppText.b1,
-        // ),
-        // Text(
-        //   "alfa",
-        //   style: AppText.b1b!.copyWith(
-        //     fontFamily: 'Agustina',
-        //   ),
-        // ),
-        // Text(
-        //   MediaQuery.of(context).size.width >= 1000 ? " />\t\t" : " />",
-        //   style: AppText.b1,
-        // )
       ],
     );
   }

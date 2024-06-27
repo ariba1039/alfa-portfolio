@@ -27,6 +27,7 @@ class ContactDesktop extends StatelessWidget {
           SizedBox(
             height: 200,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (int index = 0;
                     index < ContactUtils.contactIcon.length;

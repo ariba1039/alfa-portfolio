@@ -31,12 +31,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     App.init(context);
-    final drawerProvider = Provider.of<DrawerProvider>(context);
 
     return Scaffold(
-      //    key: drawerProvider.key,
       extendBodyBehindAppBar: true,
-      //   drawer: !Responsive.isDesktop(context) ? const _MobileDrawer() : null,
       body: SafeArea(
         child: Stack(
           children: [
