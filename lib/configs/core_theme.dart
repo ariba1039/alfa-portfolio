@@ -24,10 +24,8 @@ final themeDark = ThemeData(
   canvasColor: Colors.white,
   fontFamily: fontFamily,
   splashColor: Colors.transparent,
-  backgroundColor: Colors.grey[800],
-  scaffoldBackgroundColor: Colors.black,
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey).copyWith(
+  scaffoldBackgroundColor: Colors.black, colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey).copyWith(
     secondary: Color.fromARGB(255, 114, 33, 206),
     brightness: Brightness.dark,
-  ),
+  ).copyWith(surface: Colors.grey[800]),
 );
