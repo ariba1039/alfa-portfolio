@@ -9,13 +9,11 @@ final themeLight = ThemeData(
   highlightColor: Colors.black,
   canvasColor: Colors.white,
   fontFamily: fontFamily,
-  backgroundColor: Colors.white,
   splashColor: Colors.transparent,
-  scaffoldBackgroundColor: Colors.white,
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey).copyWith(
+  scaffoldBackgroundColor: Colors.white, colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey).copyWith(
     secondary: Colors.black,
     brightness: Brightness.light,
-  ),
+  ).copyWith(surface: Colors.white),
 );
 
 final themeDark = ThemeData(
